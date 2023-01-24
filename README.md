@@ -1,4 +1,4 @@
-# Traitemem_Signal_TP1
+# Traitement_Signal_TP1
  # Objectifs
 Représentation de signaux et applications de la transformée de Fourier discrète
 (TFD) sous Matlab.
@@ -31,3 +31,22 @@ dans l’analyse et l’interprétation des signaux physiques réels.
     ylabel("A");
 ```
 ### 3)Pour mieux visualiser le contenu fréquentiel du signal, utiliser la fonction fftshift
+<img width="485" alt="Screenshot 2023-01-24 at 22 24 39" src="https://user-images.githubusercontent.com/87026851/214420798-94dcb85f-4b78-4f3e-bff3-ef78783f39f0.png">
+
+``` 
+    fshift = (-N/2:N/2-1)*(fe/N); 
+    z = fftshift(x);
+   %on represente le spectre d'amplitude  centré à la fréquence  zéro.
+    plot(fshift,fftshift(2*abs(y)/N));
+    legend("Spectre d'Amplitude centré en 0");
+    xlabel("f");
+    ylabel("A");
+```
+### 4)Créer un nouveau signal xnoise, en introduisant un bruit blanc gaussien dans le signal d’origine x(t), puis visualisez-le.
+
+
+```
+    bruit = 2*randn(size(x));%creation du bruit blanc gaussien de faible intensité
+    xbruit = x+bruit;%on l ajoute au signal x
+    plot(t,xbruit,'.')
+```

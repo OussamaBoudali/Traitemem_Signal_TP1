@@ -86,8 +86,9 @@ dans l’analyse et l’interprétation des signaux physiques réels.
 ### 1)Chargez, depuis le fichier ‘bluewhale.au’, le sous-ensemble de données qui correspond au chant du rorqual bleu du Pacifique. En effet, les appels de rorqual bleu sont des sons à basse fréquence, ils sont à peine audibles pour les humains. Utiliser la commande audioread pour lire le fichier. Le son à récupérer correspond aux indices allant de 2.45e4 à 3.10e4.
 
 <img width="489" alt="Screenshot 2023-01-24 at 23 01 57" src="https://user-images.githubusercontent.com/87026851/214431389-0fb81ad6-b301-48d1-a915-182f053908d9.png">
+
 ```
-    sound(chant,fs);
+   sound(chant,fs);
    plot(t,chant);
    legend("representation du signal Chant");
    xlabel("t");

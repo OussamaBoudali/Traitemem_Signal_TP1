@@ -20,3 +20,14 @@ dans l’analyse et l’interprétation des signaux physiques réels.
     plot (t, x ,'.')
 ```
 ### 2)Calculer la TFD du signal x(t) en utilisant la commande fft, puis tracer son spectre en amplitude
+
+<img width="515" alt="Screenshot 2023-01-24 at 22 18 44" src="https://user-images.githubusercontent.com/87026851/214418786-03890367-0bca-4233-9c9d-a000a0b2e0e6.png">
+
+```
+%representation du spectre du signal x Transformé de Fourier
+    plot (f, abs(y))
+    legend("y=fft(x)");
+    xlabel("f");
+    ylabel("A");
+```
+### 3)Pour mieux visualiser le contenu fréquentiel du signal, utiliser la fonction fftshift

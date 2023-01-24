@@ -43,10 +43,23 @@ dans l’analyse et l’interprétation des signaux physiques réels.
     ylabel("A");
 ```
 ### 4)Créer un nouveau signal xnoise, en introduisant un bruit blanc gaussien dans le signal d’origine x(t), puis visualisez-le.
-
+<img width="466" alt="Screenshot 2023-01-24 at 22 37 28" src="https://user-images.githubusercontent.com/87026851/214426775-44526801-2b9d-41b9-9727-15cde46dc66e.png">
 
 ```
     bruit = 2*randn(size(x));%creation du bruit blanc gaussien de faible intensité
     xbruit = x+bruit;%on l ajoute au signal x
     plot(t,xbruit,'.')
 ```
+### 5) Utiliser la commande sound pour écouter le signal et puis le signal bruité.
+ 
+````
+  sound(xbruit,fe)
+
+### 6) Calculez puis tracer le spectre de puissance du signal bruité centré à la fréquence zéro.
+
+````
+    ybruit = fft(xbruit);%transformé de fourier du signal bruité 
+    %on represente le spectre d'amplitude du signal bruité avec un bruit blanc gaussien de faible intensité
+    plot(fshift,fftshift(2*abs(ybruit)/N))
+    xlabel("f");
+    ylabel("A");
